@@ -16,17 +16,6 @@ var bodyParser = require('body-parser');
 let AppConfig = require('./private/AppConfig.js');
 
 var app = express();
-// let config = {};
-// livereload(app, config);
-
-// var livereload = require('livereload');
-// var server = livereload.createServer(
-  // connect.compiler({ src: __dirname + "/public", enable: ['less'] }),
-  // connect.staticProvider(__dirname + "/public")
-// );
-// let server = livereload.createServer({exts: ['jade', 'js']});
-// server.watch(__dirname + "/public");
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

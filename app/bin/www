@@ -21,6 +21,7 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+
 /**
  * Listen on provided port, on all network interfaces.
  */
@@ -89,30 +90,14 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 
-//
-// // hot reloading
-// var reload = require('reload');
-// var AppConfig = require('../private/AppConfig.js');
-// debug('startup env', AppConfig.APPENV);
-// if (AppConfig.APPENV === 'dev') {
-//   debug('using hot reloader');
-//   var http = require('http');
-//   var reloadServer = http.createServer(app);
-//   var delay = 300;
-//   reload(reloadServer, app, delay);
-//   reloadServer.listen(app.get('port'), function(err, res) {
-//     console.log("Reload server listening on port " + app.get('port'));
-//   });
-//
-// } else {
-//   debug('no hot reload');
-// }
 
 // hot reloading
 var reload = require('reload');
-var reloader           = require('http').Server(app);
-reload(reloader, app, 300);
-// START ===================================================
-reloader.listen( app.get('port'), function() {
-  console.log('listening on port ' + app.get('port'));
-});
+var AppConfig = require('../private/AppConfig.js');
+if (AppConfig.APPENV === 'dev') {
+  debug('using hot reloader');
+  var reload = require('reload');
+  reload(server, app, 300);
+} else {
+  debug('no hot reload in APPENV', AppConfig.APPENV);
+}
