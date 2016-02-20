@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style", content="black")
+    link(rel="apple-touch-icon" href="/images/icons/app-icon.png")
+    meta(name="viewport", content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width")
+    script(src="/javascripts/vendor-min.js")
+
+  body
+    block content
+
+  if devmode
+    p devmode!
+    script(src="/reload/reload.js")
+    //- script(src="/javascripts/vendor/reload.js")
+
+  #navbar
+    a(href="/") home
+    //- span devmode: #{devmode} | reloadUrl: #{reloadUrl}

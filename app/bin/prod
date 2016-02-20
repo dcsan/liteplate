@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# export PORT=4040
+# export DEBUG=*
+# DEBUG=* PORT=4040 pm2 start bin/www --name liteapp
+# node bin/www
+
+DEBUG=* PORT=4040 pm2 start bin/www --name liteapp

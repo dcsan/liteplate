@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+time \
+	debug=* \
+	# debug=*,connect:gzip-static,-nodemon
+	PORT=4040 \
+	supervisor -e 'html|jade|js' node bin/www
+
+
+	# nodemon -e jade,js bin/www

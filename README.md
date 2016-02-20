@@ -1,2 +1,3 @@
-# liteplate
-lite app boilerplate
+# liteapp
+boilerplate for super light mobile apps
+w server side rendering

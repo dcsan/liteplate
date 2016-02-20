@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+
+debug=* \
+	PORT=4040 \
+	node bin/www
+
+# debug=*,connect:gzip-static,-nodemon

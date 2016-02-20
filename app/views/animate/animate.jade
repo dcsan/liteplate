@@ -1,0 +1,14 @@
+extends ../layout
+
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  .box#box1
+
+  //- have to be in order?
+  //- script(src="/javascripts/vendor/zepto.min.js")
+  //- script(src="/javascripts/vendor/velocity.min.js")
+  //- script(src="/javascripts/vendor/velocity.ui.js")
+  script(src="/javascripts/views/animate-client.js")

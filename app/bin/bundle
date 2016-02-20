@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# make a single file of js components in the right order
+# gzip is not needed for dev mode since 'compression' module handles it
+# webpack wtf
+
+base=public/javascripts/vendor
+rm public/javascripts/vendor-min*
+# has to be in order
+cat $base/zepto.min.js \
+		$base/break.txt \
+		$base/velocity.min.js \
+		$base/break.txt \
+		$base/done.js \
+		> \
+			public/javascripts/vendor-min.js
+# cp public/javascripts/vendor.js public/javascripts/vendor-min.js
+gzip -kf -9 public/javascripts/vendor-min.js
